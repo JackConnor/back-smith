@@ -7,19 +7,39 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <ul>
+  <%=params%>
+    <div class="navbar">
+    <div id="logo">
+      <a href="/"><img src="http://s6.postimg.org/kmsk0ootd/logo.png" ></img></a>
+    </div>
+    <div id="login_info">
+      <div class="flash-container">
+        <%=flash[:notice]%>
+      </div>
+      <ul>
+        <% if current_user %>
+          <li>Hello, <%=current_user.name%></li>
+          <li><a href="/skaters/<%=current_user.id%>">My Profile</a> |
+          <%=link_to "Logout", sessions_path, method: :delete, data: {confirm: "Are you sure?"} %></li>
+        <% else %>
+          <li><%= link_to "Please login", login_path %></li>
+          <li><%= link_to "Not yet registered? Click here", new_skater_path %></li>
+        <% end %>
+      </ul>
+    </div>
     <% if current_user %>
-      <li>hello, the current user is: <%=current_user.email%>, otherwise known as: <%=current_user.name%></li>
-      <li><%=link_to "Logout", session_path(current_user.id), method: :delete, data: {confirm: "Are you sure?"} %></li>
-    <% else %>
-      <li><%= link_to "Please login", login_path %></li>
-    <% end %>
-  </ul>
+      <div class="new-post">
+        <h3><a href="/posts/new">New Post</a></h3>
+      </div>
+    <% else%>
+    <%end%>
+  </div>
 
 
+<div id="root_yield">
+  <%= yield %>
+</div>
 
-
-<%= yield %>
 
 </body>
 </html>

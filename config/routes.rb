@@ -1,8 +1,26 @@
 Rails.application.routes.draw do
 
-  root "skaters#index"
+  get 'upvotes/index'
+
+  post 'upvotes/new' => "upvotes#create"
+
+  get 'upvotes/create'
+
+  get 'upvotes/destroy'
+
+  resources :crews
+
+  delete "sessions" =>"sessions#delete"
+
+  # post "skaters/#{:id}/edit" => "skaters#show"
+
+  root "posts#index"
 
   get 'login', to: 'sessions#new'
+
+  resources :posts do
+    resources :comments
+  end
 
   resources :skaters
 

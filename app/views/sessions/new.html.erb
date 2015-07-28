@@ -3,13 +3,11 @@
 
 <%= form_tag sessions_path do %>
   <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
+    Email:<%= email_field_tag :email %>
   </div>
 
   <div class="field">
-    <%= label_tag :password %>
-    <%= text_field_tag :password %>
+    Password:<%= text_field_tag :password %>
   </div>
   <div class="actions"><%=submit_tag "Log in"%></div>
 <% end %>

@@ -4,9 +4,9 @@
 <div class="skaters-container">
   <ul>
     <% @skaters.each do |s| %>
-      <li><img class="index-sktr-photo" src="<%=s.photo%>" alt="" /></li>
-      <li><%= s.name %></li>
-      <li class="last-blurb"><%= s.city %></li>
+      <li><a href="/skaters/<%=s.id%>"><img class="index-sktr-photo" src="<%=s.photo%>" alt="" /></a></li>
+      <li><h4><%= s.name %></h4></li>
+      <li class="last-blurb"><h2><%= s.city %></h2></li>
     <% end %>
   </ul>
 

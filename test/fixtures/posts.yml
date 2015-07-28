@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  keywords: MyString
+  featured_skater: MyString
+  filmer: MyString
+  cover_photo: MyString
+  video_link: MyString
+  city: MyString
+  spot: MyString
+
+two:
+  title: MyString
+  keywords: MyString
+  featured_skater: MyString
+  filmer: MyString
+  cover_photo: MyString
+  video_link: MyString
+  city: MyString
+  spot: MyString

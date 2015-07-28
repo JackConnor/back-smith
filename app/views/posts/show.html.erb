@@ -1,0 +1,14 @@
+<h1><%=@post.title%></h1>
+<img src="<%=@post.cover_photo%>"/>
+<br>
+<% @post.comments.all.each do |c|%>
+  <h2><%= c.body %></h2>
+  <h4><%= Skater.find(c.skater_id).name %></h4>
+  <% end %>
+
+<% if current_user && current_user == Post.find(params[:id]).skater %>
+<div class="delete-post">
+  <%=link_to "Delete this Post", @post, :method => :delete%>
+</div>
+<% else%>
+<%end%>

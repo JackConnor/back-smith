@@ -11,3 +11,7 @@ Skater.create(name: "Jack", email:"jack@gmail.com", city:"LA", photo: "http://pa
 Skater.create(name: "Andrew Reynolds", email:"andrew@gmail.com", city:"SoCal", photo: "http://static.giantbomb.com/uploads/scale_small/0/2986/522646-andrew_reynolds.jpg", intro_video: "https://vimeo.com/46756377", is_filmer?: true, password: "frontside")
 
 Skater.create(name: "Stephan Janoski", email:"stephan@gmail.com", city:"Brooklyn", photo: "https://cdn.shopify.com/s/files/1/0251/2114/t/2/assets/skateTeam_Stefan-Janoski.jpg?1210", intro_video: "https://www.youtube.com/watch?v=MbDlUoYlsyw", is_filmer?: true, password: "switch")
+
+Post.create(title:"Bs Flip Wallenberg Holy Shit!", keywords:"reynolds backsideflip socal", skater_id:2, cover_photo:"http://cache.emerica.com/content/posts/andrewbsflipthrashercover-467.jpg", city:"San Diego", spot: "Wallenberg", video_link:"https://www.youtube.com/watch?v=pdSD6UKUwX0")
+
+Post.create(title:"Wallride", keywords:"wallrides", skater_id:3, cover_photo:"http://www.wiskate.com/old_images/danny_stemper-green_wallride.jpg", city:"New York", spot: "curb", video_link:"https://www.youtube.com/watch?v=746zG_Md6co")

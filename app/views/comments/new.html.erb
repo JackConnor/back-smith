@@ -1,0 +1,7 @@
+<h1>Comments#new</h1>
+<%=form_for @comment do |c| %>
+  <%=c.text_field :body%>
+  <%=c.text_field :post_id%>
+  <%=c.text_field :skater_id%>
+  <%=c.submit "submit"%>
+<%end%>

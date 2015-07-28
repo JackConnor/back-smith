@@ -1,3 +1,80 @@
 // Place all the styles related to the skaters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  position: absolute;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+img {
+
+}
+
+li {
+  list-style-type: none
+}
+
+.navbar {
+  height: 180px;
+  //background-color: #FF6633;
+  outline: black solid 2px;
+}
+
+.last-blurb {
+  margin-bottom: 40px;
+}
+
+.posts-container {
+  width: 800px;
+  margin-left: 180px;
+  position: absolute;
+  outline: green solid 2px;
+  position: relative;
+  h1 {
+    margin-left: 50px;
+  }
+}
+
+.posts {
+  outline: 2px solid blue;
+  position: relative;
+  width: 500px;
+  margin: 0 auto
+  ul {
+    width: 250px;
+  }
+}
+
+.posts_index {
+  img {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+.new-post {
+  font-size: 18px;
+  display: block;
+  margin-top: -25px;
+}
+
+#root_yield {
+  outline: 2px solid red;
+  position: absolute;
+  width: 100%;
+}
+
+#login_info {
+  margin-top: -5px;
+  float: right;
+  margin-right: 15px;
+  display: inline-block;
+  font-size: 20px;
+}
+
+#logo {
+  display: inline-block;
+}

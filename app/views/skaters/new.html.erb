@@ -1,2 +1,21 @@
 <h1>Skaters#new</h1>
 <p>Find me in app/views/skaters/new.html.erb</p>
+
+<%= form_for @skater do |s| %>
+  <%=s.label :name %>
+  <%=s.text_field :name%>
+  <br>
+  <%=s.label :email %>
+  <%=s.text_field :email%>
+  <br>
+  <%=s.label :photo %>
+  <%=s.text_field :photo%>
+  <br>
+  <%=s.label :password %>
+  <%=s.text_field :password%>
+  <br>
+  <%=s.label :password_confirmation %>
+  <%=s.text_field :password_confirmation%>
+  <br>
+  <%=s.submit%>
+<% end %>

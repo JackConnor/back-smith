@@ -1,2 +1,9 @@
 <h1>Skaters#edit</h1>
-<p>Find me in app/views/skaters/edit.html.erb</p>
+
+<%= form_for @skater do |s|%>
+  <%=s.text_field :name%>
+  <%=s.text_field :email%>
+  <%=s.text_field :city%>
+  <%=s.text_field :photo%>
+  <%=s.submit%>
+<%end%>

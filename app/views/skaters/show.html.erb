@@ -1,2 +1,20 @@
-<h1>Skaters#show</h1>
-<p>Find me in app/views/skaters/show.html.erb</p>
+<h1><%=@skater.name%></h1>
+
+<img src="<%=@skater.photo%>"/><br>
+<h4 style:"color:gray"> Recent posts by this skater:</h4>
+
+<div class="recent-posts">
+  <ul>
+    <% @skater.posts.all.each do |p| %>
+      <li><a href="/posts/<%=p.id%>"><img src="<%=p.cover_photo%>" height="250px" width="250px"/></a></li>
+      <li><%=p.title%></li>
+      <li>Featured Skater:<%=Skater.find(p.feat_skate).name%></li>
+      <li>Filmed by:<%=Skater.find(p.filmer).name%></li>
+      <% end %>
+  </ul>
+  <ul>
+    <% @skater.comments.all.each do |c|%>
+    <%=c.body%>
+    <%end%>
+  </ul>
+</div>

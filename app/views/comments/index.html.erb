@@ -1,0 +1,10 @@
+<h1>Comments#index</h1>
+
+<% @comments.each do |c| %>
+  <img src="<%=c.post.cover_photo%>"/>
+
+  <h2><%=c.body%></h2>
+  <h4><%=Skater.find(c.skater_id).name%></h4>
+  <br>
+  <br>
+<%end%>

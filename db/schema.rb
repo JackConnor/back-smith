@@ -11,7 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150726160649) do
+ActiveRecord::Schema.define(version: 20150728035155) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "body"
+    t.integer  "skater_id"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "crews", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "admin"
+    t.string   "city"
+    t.string   "cover_photo"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "crews_skaters", id: false, force: :cascade do |t|
+    t.integer "crew_id",   null: false
+    t.integer "skater_id", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.string   "keywords"
+    t.integer  "skater_id"
+    t.string   "cover_photo"
+    t.string   "video_link"
+    t.string   "city"
+    t.string   "spot"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "feat_skate"
+    t.integer  "filmer"
+  end
 
   create_table "skaters", force: :cascade do |t|
     t.string   "name"
@@ -24,5 +60,15 @@ ActiveRecord::Schema.define(version: 20150726160649) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
+
+  create_table "upvotes", force: :cascade do |t|
+    t.integer  "post_id"
+    t.integer  "skater_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "upvotes", ["post_id"], name: "index_upvotes_on_post_id"
+  add_index "upvotes", ["skater_id"], name: "index_upvotes_on_skater_id"
 
 end
