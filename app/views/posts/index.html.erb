@@ -3,10 +3,11 @@
     <h1>The Skate Feed</h1>
       <% @posts.each do |p| %>
         <div class="posts_index"><a href="/posts/<%=p.id%>"><img src="<%=p.cover_photo%>"/></a></div>
-        <div class="posts_index"><h2><%=p.title%></h2></div>
+        <div class="posts_index"><h2><%=p.title%></h2>
+        </div>
         <div><h4>Posted by: <a href="/skaters/<%=p.skater_id%>"><%=Skater.find(p.skater_id).name%></a>  |  Skater: <a href="/skaters/<%=p.feat_skate%>"><%=Skater.find(p.feat_skate).name%></a></h4></div>
         <div class="posts_index"><h4>Filmed by: <a href="/skaters/<%=p.filmer%>"><%=Skater.find(p.filmer).name%></a></h4></div>
-        <div class="posts_index"><%=link_to "Upvote", upvotes_new_path(p.id), :method => :create%> | Total Votes: <%=p.upvotes.all.length%> | <%= link_to "comment", "posts/#{p.id}/comments/new"%></div> |
+        <div class="posts_index"><%=link_to "Upvote", upvotes_new_path(:post => p.id), :method => :create%> | Total Votes: <%=p.upvotes.all.length%> | <%= link_to "comment", "posts/#{p.id}/comments/new"%></div> |
         <div>
 
         </div>

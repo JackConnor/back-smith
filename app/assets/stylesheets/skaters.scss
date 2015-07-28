@@ -61,10 +61,28 @@ li {
   margin-top: -25px;
 }
 
+.navbar{
+
+}
+
+.upvotes-column {
+  width: 23%;
+  display: block;
+  float: right;
+  outline: 2px solid gray
+}
+
+#upvotes-image {
+  height: 150px;
+  width: 150px;
+}
+
 #root_yield {
+  display: block;
+  float: left;
   outline: 2px solid red;
   position: absolute;
-  width: 100%;
+  width: 75%;
 }
 
 #login_info {

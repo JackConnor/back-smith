@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728035155) do
+ActiveRecord::Schema.define(version: 20150728195856) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "body"
@@ -43,10 +43,11 @@ ActiveRecord::Schema.define(version: 20150728035155) do
     t.string   "video_link"
     t.string   "city"
     t.string   "spot"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "feat_skate"
     t.integer  "filmer"
+    t.integer  "upvoters",    default: 0
   end
 
   create_table "skaters", force: :cascade do |t|

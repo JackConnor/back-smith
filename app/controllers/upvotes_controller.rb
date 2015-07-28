@@ -4,11 +4,12 @@ class UpvotesController < ApplicationController
 
   def new
     @upvote = Upvote.new
-    redirect_to "upvote#create"
   end
 
   def create
-    @upvote = Upvote.create(skater_id: current_user.id)
+    @post = Post.find(params[:post])
+    @post.increment(:upvoters, by=1).save
+    @upvote = Upvote.create(skater_id: current_user.id, post_id: params[:post])
     redirect_to root_path
   end
 
