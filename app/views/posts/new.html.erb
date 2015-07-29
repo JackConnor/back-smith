@@ -10,7 +10,7 @@
     <li><%= p.text_field :keywords %></li>
     <br>
     <li><%= p.label :cover_photo %></li>
-    <li><%= p.text_field :cover_photo%></li>
+    <li><%= p.file_field :cover_photo%></li>
     <br>
     <li><%= p.label :video_link %></li>
     <li><%= p.text_field :video_link%></li>
@@ -21,8 +21,7 @@
     <li><%= p.label :filmer %></li>
     <li><%= p.select(:filmer, options_from_collection_for_select(Skater.all, :id, :name))%></li>
     <br>
-    <%=p.submit%>
+      <%=p.submit %>
   <% end %>
   </ul>
-
 </div>

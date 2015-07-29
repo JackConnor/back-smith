@@ -1,5 +1,9 @@
 class SkatersController < ApplicationController
 
+  def test
+    @posts = Post.all
+  end
+
   def index
     @skaters = Skater.all
   end

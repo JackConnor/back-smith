@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'upvotes/destroy'
 
+  get "skaters/test" => "skaters#test"
+
   resources :crews
 
   delete "sessions" =>"sessions#delete"

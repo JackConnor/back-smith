@@ -5,6 +5,14 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 
 gem "carrierwave"
+
+gem 'bootstrap-sass'
+
+gem "autoprefixer-rails"
+
+gem 'streamio-ffmpeg'
+
+gem 'mini_magick', '3.5.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

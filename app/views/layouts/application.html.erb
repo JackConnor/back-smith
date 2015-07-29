@@ -5,10 +5,33 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
   <%=params%>
-    <div class="navbar">
+  <!-- <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Title</a>
+      <ul class="nav">
+        <li class='active'>
+          <a href="#">Explore</a>
+        </li>
+        <li><a href="#">Link1</a></li>
+        <li><a href="#">Link2</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <!-- <ul class="nav nav-tabs">
+
+        <li>anything</li>
+        <li>anythi</li>
+        <li>anythiwwww</li>
+      </ul>
+    </li>
+  </ul> -->
+
+
+    <div class="navba">
     <div id="logo">
       <a href="/"><img src="http://s6.postimg.org/kmsk0ootd/logo.png" ></img></a>
     </div>
@@ -38,19 +61,6 @@
 
 <div id="root_yield">
   <%= yield %>
-</div>
-<div class="upvotes-column">
-  <div class="voted-posts">
-    <% Post.all.order(:upvoters).reverse.each do |p|%>
-    <ul>
-      <li><%=p.title%></li>
-      <li><img id="upvotes-image" src="<%=p.cover_photo%>"/></li>
-      <li><%=p.upvoters%></li>
-    </ul>
-
-    <%end%>
-
-  </div>
 </div>
 
 </body>

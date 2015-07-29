@@ -61,7 +61,7 @@ li {
   margin-top: -25px;
 }
 
-.navbar{
+.navba{
 
 }
 
@@ -72,17 +72,34 @@ li {
   outline: 2px solid gray
 }
 
+.span4 {
+  height:275px;
+  outline: 2px solid black;
+  display: block;
+  float: left;
+  width: 275px;
+  margin-left: 15px;
+  margin-top: 15px;
+  outline: 2px solid black
+}
+
+.cover {
+  width: 275px;
+  height: 275px;
+}
+
 #upvotes-image {
   height: 150px;
   width: 150px;
 }
 
 #root_yield {
-  display: block;
+  display: inline-block;
   float: left;
   outline: 2px solid red;
   position: absolute;
-  width: 75%;
+  width: 90%;
+  margin-left: 5%
 }
 
 #login_info {

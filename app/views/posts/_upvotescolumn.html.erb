@@ -1,0 +1,14 @@
+
+<div class="upvotes-column">
+  <div class="voted-posts">
+    <% Post.all.order(:upvoters).reverse.each do |p|%>
+    <ul>
+      <li><%=p.title%></li>
+      <li><img id="upvotes-image" src="<%=p.cover_photo%>"/></li>
+      <li><%=p.upvoters%></li>
+    </ul>
+
+    <%end%>
+
+  </div>
+</div>
