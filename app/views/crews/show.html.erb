@@ -1,2 +1,25 @@
-<h1>Crews#show</h1>
-<p>Find me in app/views/crews/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div id="profile-photo" class="col-md-6 col-md-offset-3">
+      <h1><%=@crew.name%></h1><br>
+      <img src="<%=@crew.cover_photo%>"/>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row crew-skaters-container">
+    <div class="col-md-12 col-xs-12">
+      <%@skaters.each do |s|%>
+      <div class="col-sm-3 col-xs-12" data-toggle="modal" data-target="#myModal">
+        <a href="/skaters/<%=s.id%>"><div class="background-wrapper">
+          <img class="crew-skater" src="<%=s.photo%>" alt="" />
+          <div class="image-caption">
+            <a href="/skaters/<%=s.id%>"><h1><%=s.name%></h1></a>
+          </div>
+        </div></a>
+      </div>
+      <%end%>
+    </div>
+  </div>
+</div>

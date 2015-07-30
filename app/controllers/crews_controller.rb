@@ -4,6 +4,8 @@ class CrewsController < ApplicationController
   end
 
   def show
+    @crew = Crew.find(params[:id])
+    @skaters = @crew.skaters
   end
 
   def new

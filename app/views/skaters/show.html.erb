@@ -8,15 +8,13 @@
   </div>
 </div>
 
-
-
 <div class="container">
   <div class="row">
     <div class="recent-posts">
-        <div class="col-sm-8 col-xs-12 profile-posts">
-            <h4 style:"color:gray"> Recent posts by this skater:</h4>
+        <div class="col-md-7 col-xs-12 profile-posts">
+            <h2 style:"color:gray"> Recent posts by this skater:</h2>
         <%@posts.each do |p|%>
-          <div id="<%=p.video_link%>" class="col-sm-12 box-post" data-toggle="modal" data-target="#myModal">
+          <div id="<%=p.video_link%>" class="col-sm-12 col-xs-12 box-post" data-toggle="modal" data-target="#myModal">
           <div class="background-wrapper">
             <img class="post-image" src="<%=p.cover_photo%>" alt="" />
             <div class="image-caption">
@@ -29,8 +27,8 @@
           </div>
         <%end%>
       </div>
-      <div class="col-sm-2 col-xs-12 upvoted-posts">
-          <h4 style:"color:gray">Upvoted by <%=@skater.name%>:</h4>
+      <div class="col-md-2 col-xs-12 upvoted-posts">
+          <h2 style:"color:gray">Upvoted by <%=@skater.name%>:</h2>
         <%@posts.each do |p|%>
           <div id="<%=p.video_link%>" class="col-sm-12 col-xs-12 box-post" data-toggle="modal" data-target="#myModal">
           <div class="background-wrapper">
@@ -46,8 +44,8 @@
         <%end%>
       </div>
 
-      <div class="col-sm-2 col-xs-12 upvoted-skaters">
-          <h4 style:"color:gray"> Favorited Skaters:</h4>
+      <div class="col-md-2 col-xs-12 upvoted-skaters">
+          <h2 style:"color:gray"> Favorited Skaters:</h2>
         <%@posts.each do |p|%>
           <div id="<%=p.video_link%>" class="col-sm-12 col-xs-12 box-post" data-toggle="modal" data-target="#myModal">
           <div class="background-wrapper">
@@ -69,4 +67,12 @@
     <%=c.body%>
     <%end%>
   </ul>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

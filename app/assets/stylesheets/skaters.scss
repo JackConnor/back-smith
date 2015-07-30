@@ -14,6 +14,16 @@ li {
   list-style-type: none
 }
 
+.crew-skater {
+  height: 150px;
+  width: 150px;
+}
+
+.crew-skaters-container {
+    padding: 10px 0 10px 0;
+    background-color: gray;
+}
+
 .last-blurb {
   margin-bottom: 40px;
 }
@@ -87,9 +97,11 @@ li {
   opacity:0;
   -webkit-transition: all .3s;
 }
+
 .background-wrapper:hover .image-caption {
   opacity:1;
 }
+
 
 .column {
   float:left;
@@ -123,14 +135,18 @@ li {
 
 .profile-posts {
   background-color: #B7BFBF;
+  margin-left: 10px;
+
 }
 
 .upvoted-posts {
-  background-color: #B8DBFF
+  background-color: #B8DBFF;
+  margin-left: 10px;
 }
 
 .upvoted-skaters {
-  background-color: #E0A3FF
+  background-color: #E0A3FF;
+  margin-left: 10px;
 }
 
 // .light {
