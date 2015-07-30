@@ -1,9 +1,32 @@
   <h1>The Skate Feed</h1>
-  <div class="row">
-    <% @posts.each do |p| %>
-      <li class="span4"><img class="cover" src="<%=p.cover_photo%>" alt="" /></li>
-    <%end%>
-  </div>
-</div>
-<div class="btn-primary">
-  <!--<%= render "upvotescolumn"%>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-xs-12">
+          <%@posts.each do |p|%>
+            <div id="<%=p.video_link%>" class="col-sm-4 col-xs-12 box-post" data-toggle="modal" data-target="#myModal"><img src="<%=p.cover_photo%>" alt="" /><div class="testing"><%=link_to "Upvote", upvotes_new_path(:post => p.id), :method => :create%> | Total Votes: <%=p.upvotes.all.length%></div>
+            </div>
+          <%end%>
+        </div>
+        <div id="upvote-column" class="col-md-3 hidden-xs">
+          <%@posts.order(:upvoters).reverse.each do |u|%>
+          <div class="col-md-12 hidden-sm box-post-right"><img src="<%=u.cover_photo%>" alt="" /></div>
+          <%end%>
+        </div>
+      </div>
+      <div class="container">
+
+        <!-- Modal -->
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <iframe id="ytplayer" type="text/html" width="1150" height="700"
+                src=""
+                frameborder="0"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

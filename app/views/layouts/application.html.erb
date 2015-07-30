@@ -9,55 +9,52 @@
 </head>
 <body>
   <%=params%>
-  <!-- <div class="navbar">
-    <div class="navbar-inner">
-      <a class="brand" href="#">Title</a>
-      <ul class="nav">
-        <li class='active'>
-          <a href="#">Explore</a>
-        </li>
-        <li><a href="#">Link1</a></li>
-        <li><a href="#">Link2</a></li>
-      </ul>
-    </div>
-  </div> -->
-  <!-- <ul class="nav nav-tabs">
-
-        <li>anything</li>
-        <li>anythi</li>
-        <li>anythiwwww</li>
-      </ul>
-    </li>
-  </ul> -->
 
 
-    <div class="navba">
-    <div id="logo">
-      <a href="/"><img src="http://s6.postimg.org/kmsk0ootd/logo.png" ></img></a>
-    </div>
-    <div id="login_info">
-      <div class="flash-container">
-        <%=flash[:notice]%>
+<div class="nav-container">
+  <nav class="navbar navbar-default">
+    <a href="/"><div class="name">
+      <h1>The Back Smith</h1>
+    </div></a>
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
       </div>
-      <ul>
-        <% if current_user %>
-          <li>Hello, <%=current_user.name%></li>
-          <li><a href="/skaters/<%=current_user.id%>">My Profile</a> |
-          <%=link_to "Logout", sessions_path, method: :delete, data: {confirm: "Are you sure?"} %></li>
-        <% else %>
-          <li><%= link_to "Please login", login_path %></li>
-          <li><%= link_to "Not yet registered? Click here", new_skater_path %></li>
-        <% end %>
-      </ul>
-    </div>
-    <% if current_user %>
-      <div class="new-post">
-        <h3><a href="/posts/new">New Post</a></h3>
-      </div>
-    <% else%>
-    <%end%>
-  </div>
 
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default" id="test">Submit</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/skaters"><h4>Skaters</h4></a></li>
+          <li><a href="/posts"><h4>Top Posts</h4></a></li>
+          <li><a href="#"><h4>Skate Crews</h4></a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><h4>Profile & Account</h4></a>
+            <ul class="dropdown-menu">
+              <li><a href="<%=skater_path(current_user)%>">My Profile</a></li>
+              <li><a href="#">My favorited Posts</a></li>
+              <li><a href="<%=new_post_path(current_user)%>">Upload a video</a></li>
+              <li><a href="<%=edit_skater_path(current_user)%>">Edit Profile</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</div>
 
 <div id="root_yield">
   <%= yield %>
