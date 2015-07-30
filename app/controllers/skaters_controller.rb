@@ -1,5 +1,4 @@
 class SkatersController < ApplicationController
-
   def test
     @posts = Post.all
   end
@@ -53,6 +52,6 @@ class SkatersController < ApplicationController
   end
   private
   def skater_params
-    params.require(:skater).permit(:name, :email, :city, :photo, :intro_video)
+    params.require(:skater).permit(:name, :email, :city, :photo, :intro_video, :password, :password_confirmation)
   end
 end

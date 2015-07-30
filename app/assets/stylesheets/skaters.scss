@@ -16,12 +16,15 @@ li {
 
 .crew-skater {
   height: 150px;
-  width: 150px;
 }
 
 .crew-skaters-container {
-    padding: 10px 0 10px 0;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
     background-color: gray;
+    h3 {
+      color: white
+    }
 }
 
 .last-blurb {

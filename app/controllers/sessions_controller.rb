@@ -13,9 +13,9 @@ class SessionsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     session[:user_id] = nil
-    redirect_to skaters_path, notice: "logging out, come back soon!"
+    redirect_to posts_path, notice: "logging out, come back soon!"
   end
 
 end

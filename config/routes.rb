@@ -12,13 +12,11 @@ Rails.application.routes.draw do
 
   resources :crews
 
-  delete "sessions" =>"sessions#delete"
-
-  # post "skaters/#{:id}/edit" => "skaters#show"
+  # get 'login' => 'sessions#new'
+  #
+  # get 'logout', to: 'sessions#destroy', via: 'delete'
 
   root "posts#index"
-
-  get 'login', to: 'sessions#new'
 
   resources :posts do
     resources :comments
@@ -26,7 +24,9 @@ Rails.application.routes.draw do
 
   resources :skaters
 
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions , only: [:new, :create]
+
+  delete '/sessions' => "sessions#destroy", as: :logout
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
