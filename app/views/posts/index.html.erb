@@ -1,14 +1,22 @@
-  <h1>The Skate Feed</h1>
   <div class="container">
     <div class="row">
       <div class="col-md-9 col-xs-12">
           <%@posts.each do |p|%>
-            <div id="<%=p.video_link%>" class="col-sm-4 col-xs-12 box-post" data-toggle="modal" data-target="#myModal"><img src="<%=p.cover_photo%>" alt="" /><div class="testing"><%=link_to "Upvote", upvotes_new_path(:post => p.id), :method => :create%> | Total Votes: <%=p.upvotes.all.length%></div>
+            <div id="<%=p.video_link%>" class="col-sm-4 col-xs-12 box-post" data-toggle="modal" data-target="#myModal">
+            <div class="background-wrapper">
+              <img class="post-image" src="<%=p.cover_photo%>" alt="" />
+              <div class="image-caption">
+                <a href="/skaters/<%=p.skater.id%>"><p>Skater:<%=p.skater.name%></p></a>
+                <a href="/skaters/#<%=Skater.find(p.filmer)%>"><p>Filmer:<%=Skater.find(p.filmer).name%></p></a>
+              </div>
+            </div>
+            <div class="testing">
+              <%=link_to "Upvote", upvotes_new_path(:post => p.id), :method => :create%> | Total Votes: <%=p.upvotes.all.length%></div>
             </div>
           <%end%>
         </div>
         <div id="upvote-column" class="col-md-3 hidden-xs">
-          <%@posts.order(:upvoters).reverse.each do |u|%>
+          <%@posts.order(:upvoters).reverse.first(5).each do |u|%>
           <div class="col-md-12 hidden-sm box-post-right"><img src="<%=u.cover_photo%>" alt="" /></div>
           <%end%>
         </div>
@@ -21,9 +29,6 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-body">
-                <iframe id="ytplayer" type="text/html" width="1150" height="700"
-                src=""
-                frameborder="0"/>
               </div>
             </div>
           </div>

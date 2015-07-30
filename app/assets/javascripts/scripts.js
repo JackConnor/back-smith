@@ -1,12 +1,27 @@
 $(function(){
-  $videoPost = ""
+  // $postImage = "";
+  // $videoPost = "";
+  // $(".post-image").mouseenter(function(){
+  //   $postImage = $(this);
+  //   $(this).remove(".post-image");
+  //   $(this).parents("box-post").append("<img class='post-image' style:'opacity:20%'' src='<%=p.cover_photo%>' />");
+  //   console.log("do ittt");
+  // })
+  //
+  // $(".box-post").mouseleave(function(){
+  //   $(this).append('$post-image')
+  //   console.log("do ittt");
+  // })
+
+
+
   $(".box-post").on("click", function(){
       console.log(this.id);
-      $videoPost = this.id
+      $videoPost = this.id;
       console.log($videoPost);
-      $('#ytplayer').attr("src", $videoPost);
-      $('#ytplayer').load()
-      $('#ytplayer').play()
+      $(".modal-body").append(
+        "<iframe id='ytplayer' width='1150' height='700' src="+this.id+"/>"
+      )
   })
 
 

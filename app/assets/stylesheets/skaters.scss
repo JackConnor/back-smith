@@ -62,9 +62,33 @@ li {
     max-width: 100%;
     width:100%;
 }
-//
 
-upvote-column {
+.background-wrapper {
+  background-color: #9999FF;
+  overflow:hidden;
+}
+.background-wrapper img{
+  -webkit-transition: all .3s;
+}
+.background-wrapper:hover img {
+    opacity: .6;
+}
+
+.image-caption{
+  margin: 0 auto;
+  width: 90%;
+  font-size: 22px;
+  position: absolute;
+  bottom: 60px;
+  padding: 5px 10px;
+  // width: 88%;
+  background: rgba(0,0,0,.5);
+  color: white;
+  opacity:0;
+  -webkit-transition: all .3s;
+}
+.background-wrapper:hover .image-caption {
+  opacity:1;
 }
 
 .column {
@@ -94,6 +118,7 @@ upvote-column {
   margin-left: -300px;
 }
 
+
 // .light {
 //   width: 640px;
 //   height: 390px
@@ -110,7 +135,6 @@ upvote-column {
 #root_yield {
   position: absolute;
   float: left;
-  outline: 2px solid red;
   width: 100%;
   margin: 0 auto;
 }
