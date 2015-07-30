@@ -10,6 +10,7 @@ class SkatersController < ApplicationController
 
   def show
     @skater = Skater.find(params[:id])
+    @posts = Post.all
   end
 
   def new

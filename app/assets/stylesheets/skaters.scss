@@ -20,7 +20,7 @@ li {
 
 .posts-container {
   width: 800px;
-  margin-left: 180px;
+  margin:0 auto;
   position: absolute;
   outline: green solid 2px;
   position: relative;
@@ -64,14 +64,14 @@ li {
 }
 
 .background-wrapper {
-  background-color: #9999FF;
+  background-color: black;
   overflow:hidden;
 }
 .background-wrapper img{
   -webkit-transition: all .3s;
 }
 .background-wrapper:hover img {
-    opacity: .6;
+    opacity: .2;
 }
 
 .image-caption{
@@ -107,9 +107,12 @@ li {
   padding-bottom: 40px;
 }
 
-.testing {
+.post-tags {
   display: inline-block;
-  height: 30px
+  height: 40px;
+  font-size: 20px;
+  font-style: bold;
+  color: #462950
 }
 
 .modal-content {
@@ -118,6 +121,17 @@ li {
   margin-left: -300px;
 }
 
+.profile-posts {
+  background-color: #B7BFBF;
+}
+
+.upvoted-posts {
+  background-color: #B8DBFF
+}
+
+.upvoted-skaters {
+  background-color: #E0A3FF
+}
 
 // .light {
 //   width: 640px;
@@ -126,6 +140,11 @@ li {
 // .modal {
 //   width:600px;
 // }
+
+#upvotes-row {
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
 
 #upvotes-image {
   height: 150px;
@@ -149,4 +168,8 @@ li {
 
 #logo {
   background-color: #f8f8f8;
+}
+
+#profile-photo img{
+  margin-bottom: 50px;
 }
