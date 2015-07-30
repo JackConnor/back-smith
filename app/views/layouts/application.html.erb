@@ -10,6 +10,7 @@
 <body>
 
 <div class="nav-container">
+  <%=params%>
   <nav class="navbar navbar-default">
     <a href="/"><div class="name">
       <h1>The Back Smith</h1>
@@ -49,17 +50,17 @@
               <li role="separator" class="divider"></li>
               <li><a href="#">Separated link</a></li>
             </ul>
-
             <% end %>
           </li>
-
-          <% if current_user %>
-            <%= current_user.email %>
-            <%= link_to 'Logout', logout_path, method: :delete%>
-          <%else%>
-            <%=link_to "please login sir or ma'am", new_session_path %>
+          <li>
+            <% if current_user %>
+              <%= current_user.email %>
+              <%= link_to 'Logout', logout_path, method: :delete%>
+            <%else%>
+              <li class="login"><%=link_to "Login", new_session_path %></li>
+              <li class="login"><%=link_to "Sign Up", new_skater_path %></li>
             <%end%>
-          <%= yield %>
+          </li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

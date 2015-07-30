@@ -17,11 +17,13 @@ class SkatersController < ApplicationController
   end
 
   def create
-    @skater = Skater.new(skater_params)
+    @skater = Skater.create(skater_params)
     if @skater.save
       session[:user_id] = @skater.id
+      flash[:notice]= "Signup Successful, thanks "+@skater.name
       redirect_to "/skaters/#{@skater.id}"
     else
+      flash[:notice]="signup unsuccessful"
       render "new"
     end
   end

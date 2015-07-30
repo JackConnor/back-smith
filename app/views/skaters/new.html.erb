@@ -1,21 +1,10 @@
-<h1>Skaters#new</h1>
-<p>Find me in app/views/skaters/new.html.erb</p>
-
-<%= form_for @skater do |s| %>
-  <%=s.label :name %>
-  <%=s.text_field :name%>
-  <br>
-  <%=s.label :email %>
-  <%=s.text_field :email%>
-  <br>
-  <%=s.label :photo %>
-  <%=s.text_field :photo%>
-  <br>
-  <%=s.label :password %>
-  <%=s.text_field :password%>
-  <br>
-  <%=s.label :password_confirmation %>
-  <%=s.text_field :password_confirmation%>
-  <br>
-  <%=s.submit%>
-<% end %>
+<ul>
+ <%= form_for @skater do |s| %>
+  <li>Name: <%=s.text_field :name%></li>
+   <li>Email: <%=s.text_field :email%></li>
+   <li>Cover-Photo: <%=s.file_field :photo%></li>
+   <li>First Video (youtube URL): <%=s.text_field :intro_video%></li>
+   <li>pw: <%=s.text_field :password%></li>
+   <li>pw: <%=s.text_field :password_confirmation%></li>
+   <li><%=s.submit "Complete Sign Up"%></li>
+ <% end %>

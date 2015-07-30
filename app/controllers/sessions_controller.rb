@@ -3,9 +3,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    skater = Skater.find_by_email(params[:email])
-    if skater && skater.authenticate(params[:password])
-      session[:user_id] = skater.id
+    @skater = Skater.find_by_email(params[:email])
+    if @skater && @skater.authenticate(params[:password])
+      session[:user_id] = @skater.id
       redirect_to root_path, notice: "logged in!"
     else
       flash.now.alert = "invalid login credentials"

@@ -12,10 +12,6 @@ Rails.application.routes.draw do
 
   resources :crews
 
-  # get 'login' => 'sessions#new'
-  #
-  # get 'logout', to: 'sessions#destroy', via: 'delete'
-
   root "posts#index"
 
   resources :posts do
@@ -24,7 +20,9 @@ Rails.application.routes.draw do
 
   resources :skaters
 
-  resources :sessions , only: [:new, :create]
+  post "sessions/new" => "sessions#create", as: :login
+
+  resources :sessions
 
   delete '/sessions' => "sessions#destroy", as: :logout
 
