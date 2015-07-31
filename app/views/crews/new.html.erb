@@ -1,2 +1,10 @@
 <h1>Crews#new</h1>
-<p>Find me in app/views/crews/new.html.erb</p>
+
+<ul>
+ <%= form_for @crew do |c| %>
+  <li>Name: <%=c.text_field :name%></li>
+   <li>Cover-Photo: <%=c.file_field :cover_photo%></li>
+   <li>City: <%=c.text_field :city%></li>
+   <li id="admin_field">Admin: <%=c.select(:admin, options_from_collection_for_select(Skater.all, :id, :name))%></li>
+   <li><%=c.submit "Complete Sign Up"%></li>
+ <% end %>

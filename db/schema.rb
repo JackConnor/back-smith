@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20150728231657) do
 
   create_table "crews", force: :cascade do |t|
     t.string   "name"
-    t.integer  "admin"
+    t.string   "admin"
     t.string   "city"
     t.string   "cover_photo"
     t.datetime "created_at",  null: false

@@ -13,7 +13,7 @@
       <h3>Crew Members:</h3>
       <%@skaters.each do |s|%>
       <div class="col-sm-2 col-xs-12" data-toggle="modal" data-target="#myModal">
-        <a href="/skaters/<%=s.id%>"><div class="background-wrapper">
+        <a href="/skaters/<%=s.id%>"><div class="background-wrapper-crew">
           <img class="crew-skater" src="<%=s.photo%>" alt="" />
           <div class="image-caption">
             <a href="/skaters/<%=s.id%>"><h1><%=s.name%></h1></a>
@@ -24,20 +24,38 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-xs-12 col-md-offset-3 more-skaters">
+      <h2>Click to see More Members of this crew</h2>
+    </div>
+  </div>
+</div>
 
-      <div class="col-md-10 col-md-offset-1 col-xs-12">
-          <h2 style:"color:gray"> Recent Posts from this crew:</h2>
-        <%@crew.posts.all.order('random()').each do |p|%>
-          <div id="<%=p.video_link%>" class="col-sm-3 col-xs-12 box-post" data-toggle="modal" data-target="#myModal">
-          <div class="background-wrapper">
-            <img class="post-image" src="<%=p.cover_photo%>" alt="" />
-            <div class="image-caption">
-              <a href="/skaters/<%=p.skater.id%>"><p>Skater:<%=p.skater.name%></p></a>
-              <a href="/skaters/#<%=Skater.find(p.filmer)%>"><p>Filmer:<%=Skater.find(p.filmer).name%></p></a>
-            </div>
-          </div>
-          <div class="post-tags">
-            <%=link_to "Upvote", upvotes_new_path(:post => p.id), :method => :create%> | Total Votes: <%=p.upvotes.all.length%></div>
-          </div>
-        <%end%>
+
+
+<div class="col-md-10 col-md-offset-1 col-xs-12">
+    <h2 style:"color:gray"> Recent Posts from this crew:</h2>
+    <%@crew.posts.all.order('random()').each do |p|%>
+    <div id="<%=p.video_link%>" class="col-sm-3 col-xs-12 box-post" data-toggle="modal" data-target="#myModal">
+      <div class="background-wrapper">
+        <img class="post-image" src="<%=p.cover_photo%>" alt="" />
+        <div class="image-caption">
+          <a href="/skaters/<%=p.skater.id%>"><p>Skater:<%=p.skater.name%></p></a>
+          <a href="/skaters/#<%=Skater.find(p.filmer)%>"><p>Filmer:<%=Skater.find(p.filmer).name%></p></a>
       </div>
+    </div>
+    <div class="post-tags">
+      <%=link_to "Upvote", upvotes_new_path(:post => p.id), :method => :create%> | Total Votes: <%=p.upvotes.all.length%></div>
+    </div>
+  <%end%>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
