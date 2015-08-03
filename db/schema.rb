@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150728231657) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.string   "body"
     t.integer  "skater_id"
@@ -74,7 +77,7 @@ ActiveRecord::Schema.define(version: 20150728231657) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "upvotes", ["post_id"], name: "index_upvotes_on_post_id"
-  add_index "upvotes", ["skater_id"], name: "index_upvotes_on_skater_id"
+  add_index "upvotes", ["post_id"], name: "index_upvotes_on_post_id", using: :btree
+  add_index "upvotes", ["skater_id"], name: "index_upvotes_on_skater_id", using: :btree
 
 end
